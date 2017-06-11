@@ -1,0 +1,427 @@
+var a = 100;
+undefined
+typeof a;
+"number"
+a=100.20;
+100.2
+typeof a;
+"number"
+a=10000000;
+10000000
+typeof a;
+"number"
+a="Hello";
+"Hello"
+typeof a;
+"string"
+a='Hello';
+"Hello"
+typeof a;
+"string"
+a='H';
+"H"
+typeof a;
+"string"
+a=true;
+true
+typeof a;
+"boolean"
+a=[];
+[]
+typeof a;
+"object"
+a instanceof Array;
+true
+typeof Array;
+"function"
+a={id:1001,name:'Ram',age:21};
+Object {id: 1001, name: "Ram", age: 21}
+typeof a;
+"object"
+a instanceof Object;
+true
+typeof Object;
+"function"
+a= 100;
+100
+b="100";
+"100"
+typeof a;
+"number"
+typeof b;
+"string"
+a==b;
+true
+a===b;
+false
+a + b;
+"100100"
+a + parseInt(b);
+200
+a - b;
+0
+"Amit "+ "Srivastava ";
+"Amit Srivastava "
+a- b;
+0
+a * b;
+10000
+a/b;
+1
+b;
+"100"
+b= "ten";
+"ten"
+a+b;
+"100ten"
+a-b;
+NaN
+c = a -b;
+NaN
+c;
+NaN
+typeof c;
+"number"
+parseInt("1000");
+1000
+parseInt("thousand");
+NaN
+d = parseInt("thousand");
+NaN
+d;
+NaN
+d = isNaN(parseInt(a))?0:parseInt(a);
+100
+a;
+100
+a="1000";
+"1000"
+d = isNaN(parseInt(a))?0:parseInt(a);
+1000
+a="Hello";
+"Hello"
+d = isNaN(parseInt(a))?0:parseInt(a);
+0
+d= 1000/0;
+Infinity
+d;
+Infinity
+typeof d;
+"number"
+isFinite(d);
+false
+d=1000/0;
+Infinity
+isFinite(d);
+false
+d= 100/2;
+50
+isFinite(d);
+true
+var ram = {id:1001,name:'Ram'};
+undefined
+ram.id;
+1001
+ram.name;
+"Ram"
+var t = 100;
+undefined
+t++;
+100
+t;
+101
+ram++;
+NaN
+var ram = {id:1001,name:'Ram'};
+undefined
+ram = null;
+null
+ram;
+null
+ram.id;
+VM603:1 Uncaught TypeError: Cannot read property 'id' of null
+    at <anonymous>:1:4
+(anonymous) @ VM603:1
+typeof ram;
+"object"
+a=100;
+100
+typeof a;
+"number"
+a=null;
+null
+typeof a;
+"object"
+var f;
+undefined
+typeof f;
+"undefined"
+f="Hello";
+"Hello"
+typeof f;
+"string"
+a=1000;
+1000
+b="100";
+"100"
+a-b;
+900
+a + true;
+1001
+a- false;
+1000
+a;
+1000
+a - false;
+1000
+function test(){
+console.log("this is test ");
+}
+undefined
+test();
+VM789:2 this is test 
+undefined
+test(100,20);
+VM789:2 this is test 
+undefined
+test(100,20,90 ,"hello",[10,20]);
+VM789:2 this is test 
+undefined
+typeof test;
+"function"
+var t = test;
+undefined
+t;
+function test(){
+console.log("this is test ");
+}
+typeof t;
+"function"
+t();
+VM789:2 this is test 
+undefined
+t= 200;
+200
+t=test;
+function test(){
+console.log("this is test ");
+}
+t;
+function test(){
+console.log("this is test ");
+}
+t();
+VM789:2 this is test 
+undefined
+test();
+VM789:2 this is test 
+undefined
+t();
+VM789:2 this is test 
+undefined
+function cube(x){
+console.log(x* x* x);
+}
+undefined
+cube(3);
+VM959:2 27
+undefined
+function evenOdd(y){
+console.log(y%2==0?"Even No "+y:"Odd No "+y);
+}
+undefined
+evenOdd(3);
+VM1085:2 Odd No 3
+undefined
+evenOdd(2);
+VM1085:2 Even No 2
+undefined
+function printFiveTable(i){
+console.log("5 * "+i+" = "+(5 * i));
+}
+undefined
+function printFiveTable(i){
+console.log("5 * "+i+" = "+(5 * i));
+}
+undefined
+printFiveTable(3);
+VM1166:2 5 * 3 = 15
+undefined
+"Hello "+2*5; 
+"Hello 10"
+"Hello "+(2*5); 
+"Hello 10"
+function loop(fn){
+for(var i = 1; i<=10; i++){
+fn(i);
+}
+}
+undefined
+loop(cube);
+VM959:2 1
+VM959:2 8
+VM959:2 27
+VM959:2 64
+VM959:2 125
+VM959:2 216
+VM959:2 343
+VM959:2 512
+VM959:2 729
+VM959:2 1000
+undefined
+loop(evenOdd);
+VM1085:2 Odd No 1
+VM1085:2 Even No 2
+VM1085:2 Odd No 3
+VM1085:2 Even No 4
+VM1085:2 Odd No 5
+VM1085:2 Even No 6
+VM1085:2 Odd No 7
+VM1085:2 Even No 8
+VM1085:2 Odd No 9
+VM1085:2 Even No 10
+undefined
+loop(fiv
+VM1286:1 Uncaught SyntaxError: missing ) after argument list
+loop(printFiveTable);
+VM1166:2 5 * 1 = 5
+VM1166:2 5 * 2 = 10
+VM1166:2 5 * 3 = 15
+VM1166:2 5 * 4 = 20
+VM1166:2 5 * 5 = 25
+VM1166:2 5 * 6 = 30
+VM1166:2 5 * 7 = 35
+VM1166:2 5 * 8 = 40
+VM1166:2 5 * 9 = 45
+VM1166:2 5 * 10 = 50
+undefined
+loop(1000);
+VM1223:3 Uncaught TypeError: fn is not a function
+    at loop (<anonymous>:3:1)
+    at <anonymous>:1:1
+loop @ VM1223:3
+(anonymous) @ VM1316:1
+function loop(fn){
+for(var i = 1; i<=10; i++){
+if(typeof fn==="function"){
+fn(i);
+}
+}
+}
+undefined
+function loop(fn){
+for(var i = 1; i<=10; i++){
+if(typeof fn==="function"){
+fn(i);
+}
+else{
+console.log("Only Function Allowed to Pass ");
+return ;
+}
+}
+}
+undefined
+loop(1000);
+VM1380:7 Only Function Allowed to Pass 
+undefined
+loop(cube);
+VM959:2 1
+VM959:2 8
+VM959:2 27
+VM959:2 64
+VM959:2 125
+VM959:2 216
+VM959:2 343
+VM959:2 512
+VM959:2 729
+VM959:2 1000
+undefined
+function stopExam(){
+console.log("Exam Over ");
+}
+
+undefined
+setTimeout(stopExam,3000);
+1
+VM1504:2 Exam Over 
+setTimeout(stopExam,10000);
+2
+VM1504:2 Exam Over 
+var x = function(){
+
+}
+undefined
+var x = function(){
+console.log("this is a function ");
+}
+undefined
+typeof x;
+"function"
+x();
+VM1605:2 this is a function 
+undefined
+setTimeout(function(){
+console.log("Function Expression Call ")
+},5000);
+3
+VM1705:2 Function Expression Call 
+loop(function(k){
+console.log("Value is ",k);
+});
+VM1773:2 Value is  1
+VM1773:2 Value is  2
+VM1773:2 Value is  3
+VM1773:2 Value is  4
+VM1773:2 Value is  5
+VM1773:2 Value is  6
+VM1773:2 Value is  7
+VM1773:2 Value is  8
+VM1773:2 Value is  9
+VM1773:2 Value is  10
+undefined
+var ee = setInterval(function(){
+console.log("I Will Call Again and Again ");
+},2000)
+undefined
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+VM1859:2 I Will Call Again and Again 
+clearInterval(ee);
+undefined
+var add = (a,b)=>a+b;
+undefined
+typeof add;
+"function"
+add(100,200);
+300
+var add = (a,b)=>{
+console.log("A is "+a+" and B is "+b);
+return a+b
+};
+undefined
+add(100,200);
+VM1952:2 A is 100 and B is 200
+300
+window;
+Window {stop: function, open: function, alert: function, confirm: function, prompt: function…}
+typeof window;
+"object"
+window.open("http://www.google.com");
+Window {stop: function, open: function, alert: function, confirm: function, prompt: function…}
+window.document.write("Hello");
+undefined
