@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Greet App</title>
+	<link rel="stylesheet" href="../css/custom.css">
+	<script src="../js/model.js"></script>
+	<script src="../js/validate.js"></script>
+	<script src="../js/controller.js"></script>
+</head>
+<body>
+	<h1>Greet <span>App</span></h1>
+	<table >
+		<tr>
+			<td><label for="firstname">FirstName</label></td>
+			<td><input class="clearAll" id="firstname" type="text" placeholder="Type First Name Here">
+			<span class="error" id="firsterror"></span>
+			</td>
+		</tr>
+		<tr>
+			<td><label for="lastname">LastName</label></td>
+			<td><input class="clearAll" id="lastname" type="text" placeholder="Type Last Name Here">
+			<span class="error" id="lasterror"></span>
+			</td>
+		</tr>
+		<tr>
+			<td><button id="greetButton">Greet</button></td>
+			<td><button id="clearButton">Clear</button></td>
+		</tr>
+	</table>
+	<h1 id="message"></h1>
+</body>
+</html>
