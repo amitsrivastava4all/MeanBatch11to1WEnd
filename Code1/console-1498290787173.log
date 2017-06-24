@@ -1,0 +1,371 @@
+var a;
+undefined
+typeof a;
+"undefined"
+a=100;
+100
+typeof a;
+"number"
+a=100.20;
+100.2
+typeof a;
+"number"
+a=1;
+1
+typeof a;
+"number"
+a=1000000;
+1000000
+typeof a;
+"number"
+a=012;
+10
+typeof a;
+"number"
+a = 100;
+100
+a=07;
+7
+var [a,b]=[10,20];
+undefined
+a;
+10
+b;
+20
+typeof a;
+"number"
+typeof b;
+"number"
+[a,b] = [b,a];
+(2) [20, 10]
+a;
+20
+b;
+10
+a = "Hello";
+"Hello"
+typeof a;
+"string"
+a='Hello';
+"Hello"
+typeof a;
+"string"
+a = "Don't Do this";
+"Don't Do this"
+typeof a;
+"string"
+a= true;
+true
+typeof a;
+"boolean"
+var ram = {id:1001,name:'Shyam',salary:9999};
+undefined
+typeof ram;
+"object"
+ram instanceof Object;
+true
+ram.id;
+1001
+typeof Object;
+"function"
+ram.id;
+1001
+ram.bonus=999;
+999
+ram;
+Object {id: 1001, name: "Shyam", salary: 9999, bonus: 999}
+ram.salary = ram.salary + 1000;
+10999
+ram;
+Object {id: 1001, name: "Shyam", salary: 10999, bonus: 999}
+ram.age = 21;
+21
+ram;
+Object {id: 1001, name: "Shyam", salary: 10999, bonus: 999, age: 21}
+ram.address=["Delhi","Mumbai"];
+(2) ["Delhi", "Mumbai"]
+ram;
+Object {id: 1001, name: "Shyam", salary: 10999, bonus: 999, age: 21…}address: Array(2)age: 21bonus: 999id: 1001name: "Shyam"salary: 10999__proto__: Object
+ram.dept = {id:1001,name:"IT",location:"Noida"};
+Object {id: 1001, name: "IT", location: "Noida"}
+ram;
+Object {id: 1001, name: "Shyam", salary: 10999, bonus: 999, age: 21…}address: Array(2)0: "Delhi"1: "Mumbai"length: 2__proto__: Array(0)age: 21bonus: 999dept: Objectid: 1001location: "Noida"name: "IT"__proto__: Objectid: 1001name: "Shyam"salary: 10999__proto__: Object
+delete ram.bonus;
+true
+ram;
+Object {id: 1001, name: "Shyam", salary: 10999, age: 21, address: Array(2)…}address: Array(2)age: 21dept: Objectid: 1001name: "Shyam"salary: 10999__proto__: Object
+function display(){
+console.log("this is display");
+}
+undefined
+display();
+VM634:2 this is display
+undefined
+typeof display;
+"function"
+var e = display;
+undefined
+typeof e;
+"function"
+e();
+VM634:2 this is display
+undefined
+var x = function(){
+console.log("this is a function ");
+}
+undefined
+typeof x;
+"function"
+x();
+VM770:2 this is a function 
+undefined
+var t = ()=>console.log('this is arrow ');
+undefined
+typeof t;
+"function"
+t();
+VM816:1 this is arrow 
+undefined
+var t1 = (a,b)=>a+b;
+undefined
+typeof t1;
+"function"
+t1(100,200);
+300
+var r = (a,b)=>{
+var c = a + b;
+console.log("Multi Line Function ");
+return c;
+}
+undefined
+r(100,200);
+VM913:3 Multi Line Function 
+300
+let y  = 100;
+undefined
+function test()
+{
+console.log("G is "+g+" "+pp);
+if(10>2){
+var g = 100;
+}
+}
+undefined
+test();
+VM994:3 Uncaught ReferenceError: pp is not defined
+    at test (<anonymous>:3:27)
+    at <anonymous>:1:1
+test @ VM994:3
+(anonymous) @ VM1006:1
+function test()
+{
+console.log("G is "+g);
+if(10>2){
+var g = 100;
+}
+}
+undefined
+test();
+VM1011:3 G is undefined
+undefined
+var bbb;
+undefined
+bbb;
+undefined
+function test()
+{
+console.log("G is "+g);
+if(10>2){
+var g = 100;
+console.log("Now G is ",g);
+}
+}
+undefined
+test();
+VM1063:3 G is undefined
+VM1063:6 Now G is  100
+undefined
+g;
+VM1069:1 Uncaught ReferenceError: g is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1069:1
+function test()
+{
+console.log("G is "+g);
+if(10>2){
+ g = 100;
+console.log("Now G is ",g);
+}
+}
+undefined
+test();
+VM1070:3 Uncaught ReferenceError: g is not defined
+    at test (<anonymous>:3:21)
+    at <anonymous>:1:1
+test @ VM1070:3
+(anonymous) @ VM1081:1
+function test()
+{
+//console.log("G is "+g);
+if(10>2){
+ g = 100;
+console.log("Now G is ",g);
+}
+}
+undefined
+test();
+VM1082:6 Now G is  100
+undefined
+g;
+100
+function test()
+{
+console.log("G is "+g);
+if(10>2){
+let g = 100;
+console.log("Now G is ",g);
+}
+}
+undefined
+test();
+VM1095:3 G is 100
+VM1095:6 Now G is  100
+undefined
+function test()
+{
+console.log("G is "+g1);
+if(10>2){
+let g1 = 100;
+console.log("Now G is ",g1);
+}
+}
+undefined
+test();
+VM1102:3 Uncaught ReferenceError: g1 is not defined
+    at test (<anonymous>:3:21)
+    at <anonymous>:1:1
+test @ VM1102:3
+(anonymous) @ VM1104:1
+function test()
+{
+
+if(10>2){
+let g1 = 100;
+console.log("Now G is ",g1);
+}
+}
+undefined
+function test()
+{
+
+if(10>2){
+let g1 = 100;
+console.log("Now G is ",g1);
+} console.log("G is "+g1);
+}
+undefined
+test();
+VM1106:6 Now G is  100
+VM1106:7 Uncaught ReferenceError: g1 is not defined
+    at test (<anonymous>:7:23)
+    at <anonymous>:1:1
+test @ VM1106:7
+(anonymous) @ VM1108:1
+ram;
+Object {id: 1001, name: "Shyam", salary: 10999, age: 21, address: Array(2)…}
+var e = ram.name;
+undefined
+e;
+"Shyam"
+var f = ram.address;
+undefined
+f;
+(2) ["Delhi", "Mumbai"]
+var {name,age,address}=ram;
+undefined
+name;
+"Shyam"
+age;
+21
+address;
+(2) ["Delhi", "Mumbai"]
+var e= [10,2,5,6,8,9];
+undefined
+var [t2,,t3,,t5] = e;
+undefined
+t2;
+10
+t3;
+5
+t5;
+8
+var [t2,,t3,,,t5] = e;
+undefined
+t5;
+9
+typeof e;
+"object"
+e instanceof Array;
+true
+typeof Array;
+"function"
+ram;
+Object {id: 1001, name: "Shyam", salary: 10999, age: 21, address: Array(2)…}address: Array(2)age: 21dept: Objectid: 1001name: "Shyam"salary: 10999__proto__: Object
+a=100;
+100
+b ="100";
+"100"
+typeof a;
+"number"
+typeof b;
+"string"
+a==b;
+true
+a===b;
+false
+a+b;
+"100100"
+a + parseInt(b);
+200
+a - b;
+0
+a * b;
+10000
+a/b;
+1
+a + true;
+101
+a - false;
+100
+"amit" - 100;
+NaN
+var c = "amit" - 100;
+undefined
+typeof c;
+"number"
+a=100/0;
+Infinity
+typeof a;
+"number"
+c;
+NaN
+isNaN(c);
+true
+isFinite(a);
+false
+ram;
+Object {id: 1001, name: "Shyam", salary: 10999, age: 21, address: Array(2)…}
+var shyam = {id:1002,name:'Shyam'};
+undefined
+shyam= null;
+null
+typeof shyam;
+"object"
+var mike;
+undefined
+mike;
+undefined
+typeof mike;
+"undefined"
+e="";
+""
