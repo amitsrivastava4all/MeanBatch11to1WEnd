@@ -1,0 +1,161 @@
+function add(){
+console.log("Args ",arguments.length);
+}
+undefined
+add();
+VM104:2 Args  0
+undefined
+add(10,20);
+VM104:2 Args  2
+undefined
+add(10,20,"30");
+VM104:2 Args  3
+undefined
+add(10,20,"30",[40,50,60]);
+VM104:2 Args  4
+undefined
+add(10,20,"30",[40,50,60],function(){
+console.log("hello");
+});
+VM104:2 Args  5
+undefined
+console.dir(add);
+VM214:1 function add()arguments: nullcaller: nulllength: 0name: "add"prototype: Object__proto__: function ()apply: function apply()arguments: (...)bind: function bind()call: function call()caller: (...)constructor: function Function()length: 0name: ""toString: function toString()Symbol(Symbol.hasInstance): function [Symbol.hasInstance]()get arguments: function ThrowTypeError()set arguments: function ThrowTypeError()get caller: function ThrowTypeError()set caller: function ThrowTypeError()__proto__: Object[[FunctionLocation]]: <unknown>[[FunctionLocation]]: VM104:1[[Scopes]]: Scopes[1]
+undefined
+function add(){
+//console.log("Args ",arguments.length);
+for(var i = 0 ; i<arguments.length; i++){
+
+}
+}
+undefined
+function add(){
+//console.log("Args ",arguments.length);
+var sum = 0;
+for(var i = 0 ; i<arguments.length; i++){
+sum = sum + arguments[i];
+}
+return sum;
+}
+undefined
+add(10,20,30);
+60
+add(10,20,30,40,50,60);
+210
+add("10",20,30,40,50,60);
+"0102030405060"
+function add(){
+//console.log("Args ",arguments.length);
+var sum = 0;
+for(var i = 0 ; i<arguments.length; i++){
+sum = sum + parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add("10",20,30,40,50,60);
+210
+add("10",20,"30",40,"50",60);
+210
+add("10",20,"30",40,"50","Hello");
+NaN
+parseInt("100");
+100
+parseInt("amit");
+NaN
+isNaN(parseInt("amit"));
+true
+isNaN(parseInt("amit"))?0:100;
+0
+isNaN(parseInt("10"))?0:100;
+100
+function add(){
+//console.log("Args ",arguments.length);
+var sum = 0;
+for(var i = 0 ; i<arguments.length; i++){
+sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+}
+return sum;
+}
+undefined
+add("10",20,"30",40,"50","Hello");
+150
+add("10",20,"ten",90);
+120
+function firstNo(){
+return 1000;
+}
+undefined
+function secondNo(){
+return "2000";
+}
+undefined
+function thirdNo(){
+return "Hello";
+}
+undefined
+add(firstNo,secondNo,thirdNo,10,"1");
+11
+function add(){
+//console.log("Args ",arguments.length);
+var sum = 0;
+for(var i = 0 ; i<arguments.length; i++){
+sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+}
+return sum;
+}
+undefined
+function add(){
+//console.log("Args ",arguments.length);
+var sum = 0;
+for(var i = 0 ; i<arguments.length; i++){
+if(typeof arguments[i]==="function"){
+arguments[i] = arguments[i]();
+}
+sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+}
+return sum;
+}
+undefined
+add(firstNo,secondNo,thirdNo,10,"100","hello");
+3110
+add(()=>1000,()=>2000,function(){return 3000});
+6000
+var d = [10,20,30];
+undefined
+typeof d;
+"object"
+d instanceof Array;
+true
+function add(){
+//console.log("Args ",arguments.length);
+var sum = 0; var arrSum = 0;
+for(var i = 0 ; i<arguments.length; i++){
+if(typeof arguments[i]==="function"){
+arguments[i] = arguments[i]();
+}
+if(arguments[i] instanceof Array){
+arrSum = 0;
+for(var j= 0 ; j<arguments[i].length; j++){
+arrSum = arrSum + (isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]));
+}
+arguments[i] = arrSum;
+}
+ sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+}
+return sum;
+}
+undefined
+add([10,20],[1,2],"hello","1",2);
+36
+function jQuery(){
+
+}
+undefined
+var $ = jQuery;
+undefined
+function jQuery(){
+function hide(){
+}
+}
+undefined
