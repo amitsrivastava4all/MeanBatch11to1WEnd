@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Salary Calculator</title>
+	<script src="js/compute.js"></script>
+</head>
+<body>
+<input type="date">
+<input type="color">
+<fieldset>
+	<legend>Salary Calculator</legend>
+
+	<h1>Salary Calculator</h1>
+	<table>
+		<tr>
+			<td><label for="">Salary</label></td>
+			<td><input type="text" id="salary"  onkeyup="compute()"></td>
+		</tr>
+		<tr>
+			<td><label for="">HRA</label></td>
+			<td><label id="hra"></label></td>
+		</tr>
+		<tr>
+			<td><label for="">DA</label></td>
+			<td><label id="da"></label></td>
+		</tr>
+		<tr>
+			<td><label for="">TA</label></td>
+			<td><label id="ta"></label></td>
+		</tr>
+		<tr>
+			<td><label for="">PF</label></td>
+			<td><label id="pf"></label></td>
+		</tr>
+		<tr>
+			<td><label for="">NS</label></td>
+			<td><label id="ns"></label></td>
+		</tr>
+		<tr>
+			<td><label for="tax">Tax</label></td>
+			<td><label id="tax"></label></td>
+		</tr>
+		
+	</table>
+	<button>Add</button>
+	<button>Clear</button>
+	</fieldset>
+	<fieldset>
+		<legend>Salary List</legend>
+		<table border="1">
+			<tr>
+				<th>Salary</th>
+				<th>HRA</th>
+				<th>DA</th>
+				<th>TA</th>
+				<th>PF</th>
+				<th>NS</th>
+				<th>Tax</th>
+			</tr>
+		</table>
+	</fieldset>
+</body>
+</html>
