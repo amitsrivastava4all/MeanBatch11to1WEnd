@@ -1,0 +1,189 @@
+function display(){
+console.log("this is display");
+}
+undefined
+typeof display;
+"function"
+display
+function display(){
+console.log("this is display");
+}
+var t =display;
+undefined
+t;
+function display(){
+console.log("this is display");
+}
+typeof t;
+"function"
+t();
+VM78:2 this is display
+undefined
+display();
+VM78:2 this is display
+undefined
+display.prototype;
+Object {constructor: function}
+display.name;
+"display"
+display.length;
+0
+var t1 = new display();
+VM78:2 this is display
+undefined
+typeof t1;
+"object"
+t1;
+display {}__proto__: Object
+t1 instanceof display;
+true
+t1 instanceof Object;
+true
+typeof display;
+"function"
+function Employee(id , name ,salary){
+this.id = id;
+this.name = name;
+this.salary = salary;
+}
+undefined
+var ram = new Employee(1001,"Ram",9999);
+undefined
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}
+typeof Employee;
+"function"
+typeof ram;
+"object"
+ram instanceof Employee;
+true
+Employee.prototype;
+Object {constructor: function}constructor: function Employee(id , name ,salary)__proto__: Object
+var shyam = new Employee(1002,"Shyam",8888);
+undefined
+shyam;
+Employee {id: 1002, name: "Shyam", salary: 8888}
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}
+Employee.prototype.bonus=1000;
+1000
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}id: 1001name: "Ram"salary: 9999__proto__: Objectbonus: 1000constructor: function Employee(id , name ,salary)__proto__: Object
+ram.id;
+1001
+ram.bonus;
+1000
+shyam.bonus;
+1000
+Employee.prototype.print=function(){
+console.log(this.id+" " +this.name + " " + this.salary);
+}
+function (){
+console.log(this.id+" " +this.name + " " + this.salary);
+}
+ram.print();
+VM884:2 1001 Ram 9999
+undefined
+shyam.print();
+VM884:2 1002 Shyam 8888
+undefined
+Employee.prototype.print=function(){
+console.log(this.id+" " +this.name + " " + this.salary+" "+this.bonus);
+}
+function (){
+console.log(this.id+" " +this.name + " " + this.salary+" "+this.bonus);
+}
+ram.print();
+VM951:2 1001 Ram 9999 1000
+undefined
+shyam.print();
+VM951:2 1002 Shyam 8888 1000
+undefined
+ram.hra = 9999;
+9999
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999, hra: 9999}
+shyam;
+Employee {id: 1002, name: "Shyam", salary: 8888}
+ram.hra;
+9999
+shyam.hra;
+undefined
+delete shyam.salary;
+true
+delete shyam.bonus;
+true
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999, hra: 9999}hra: 9999id: 1001name: "Ram"salary: 9999__proto__: Objectbonus: 1000print: function ()constructor: function Employee(id , name ,salary)__proto__: Object
+ram.salary;
+9999
+ram.bonus;
+1000
+shyam.salary;
+undefined
+shyam.bonus;
+1000
+Employee.prototype.setBonus=function(bonus){
+this.bonus=bonus;
+}
+function (bonus){
+this.bonus=bonus;
+}
+ram.setBonus(88888);
+undefined
+ram.bonus;
+88888
+shyam.setBonus(5555);
+undefined
+shyam.bonus;
+5555
+ram.bonus;
+88888
+Employee.ta = 5645;
+5645
+ram.bonus;
+88888
+shyam.bonus;
+5555
+Employee.ta;
+5645
+ram.ta;
+undefined
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999, hra: 9999, bonus: 88888}
+var obj = {"ip":"2607:f8b0:4004:80b::200e","country_code":"US","country_name":"United States","region_code":"","region_name":"","city":"","zip_code":"","time_zone":"","latitude":37.751,"longitude":-97.822,"metro_code":0};
+undefined
+obj.country_name;
+"United States"
+ram.salary;
+9999
+var t2 = [10,20,89,5,31,56];
+undefined
+for(var i = 0; i<t2.length; i++){
+console.log(t2[i]);
+}
+VM1718:2 10
+VM1718:2 20
+VM1718:2 89
+VM1718:2 5
+VM1718:2 31
+VM1718:2 56
+undefined
+function printArray(x){
+console.log("Value of X is "+x);
+}
+undefined
+typeof t2;
+"object"
+t2 instanceof Array;
+true
+typeof Array;
+"function"
+t2.forEach(printArray);
+VM1809:2 Value of X is 10
+VM1809:2 Value of X is 20
+VM1809:2 Value of X is 89
+VM1809:2 Value of X is 5
+VM1809:2 Value of X is 31
+VM1809:2 Value of X is 56
+undefined
