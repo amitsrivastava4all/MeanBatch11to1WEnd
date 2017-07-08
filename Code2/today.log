@@ -1,0 +1,14 @@
+var img = document.createElement("img");
+undefined
+img;
+<img>​
+img.src="images/delete.png";
+"images/delete.png"
+img;
+<img src=​"images/​delete.png">​
+img.setAttribute("myattr","Ram");
+undefined
+img;
+<img src=​"images/​delete.png" myattr=​"Ram">​
+img.getAttribute("myattr");
+"Ram"

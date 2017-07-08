@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Emp CRUD APP</title>
+	<script src="js/model.js"></script>
+	<script src="js/controller.js"></script>
+</head>
+<body>
+	<fieldset>
+		<legend>Emp Details</legend>
+		<table border="1">
+			<tr>
+				<td><label for="">Id</label></td>
+				<td><input type="text" id="empid"></td>
+			</tr>
+			<tr>
+				<td><label for="">Name</label></td>
+				<td><input type="text" id="name" placeholder="Type Name Here"></td>
+			</tr>
+			<tr>
+				<td><label for="">Salary</label></td>
+				<td><input type="text" id="salary" placeholder="Type Salary Here"></td>
+			</tr>
+		</table>
+		<button id="add">Add</button>
+		<button>Delete</button>
+		<button>Search</button>
+		<hr>
+		<p>No Of Records Added <span id="noofrecords"></span></p> 
+	</fieldset>
+	<fieldset>
+		<legend>Emp List</legend>
+		<table border="1">
+			<thead>
+				<tr>
+					<td>Id</td>
+					<td>Name</td>
+					<td>Salary</td>
+					<td>Operations</td>
+				</tr>
+			</thead>
+			<tbody id="empdata"></tbody>
+		</table>
+	</fieldset>
+</body>
+</html>
