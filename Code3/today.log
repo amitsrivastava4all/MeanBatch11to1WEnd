@@ -1,0 +1,137 @@
+controller.js:8 Emp Id is  1000
+document.getElementsByClassName("clearfields");
+(2) [input#name.clearfields, input#salary.clearfields, name: input#name.clearfields, salary: input#salary.clearfields]
+var e = document.getElementsByClassName("clearfields");
+undefined
+typeof e;
+"object"
+e instanceof Array;
+false
+var dd = [10,20,30,40,50];
+undefined
+dd instanceof Array;
+true
+e instanceof HTMLCollection;
+true
+dd.forEach(myfunction);
+VM319:1 Uncaught ReferenceError: myfunction is not defined
+    at <anonymous>:1:12
+(anonymous) @ VM319:1
+function myfunction(w){
+console.log("W is "+w);
+}
+undefined
+dd.forEach(myfunction);
+VM381:2 W is 10
+VM381:2 W is 20
+VM381:2 W is 30
+VM381:2 W is 40
+VM381:2 W is 50
+undefined
+var e = document.getElementsByClassName("clearfields");
+undefined
+e;
+(2) [input#name.clearfields, input#salary.clearfields, name: input#name.clearfields, salary: input#salary.clearfields]
+function MyArray(){
+
+}
+undefined
+MyArray.prototype;
+Object {constructor: function}
+MyArray.prototype.forEachMy=function(){
+console.log('this is my function ');
+};
+function (){
+console.log('this is my function ');
+}
+Array.prototype.forEach;
+function forEach() { [native code] }
+MyArray.prototype.forEachMy;
+function (){
+console.log('this is my function ');
+}
+Array.prototype;
+[constructor: function, toString: function, toLocaleString: function, join: function, pop: function…]concat: function concat()constructor: function Array()copyWithin: function copyWithin()entries: function entries()every: function every()fill: function fill()filter: function filter()find: function find()findIndex: function findIndex()forEach: function forEach()includes: function includes()indexOf: function indexOf()join: function join()keys: function keys()lastIndexOf: function lastIndexOf()length: 0map: function map()pop: function pop()push: function push()reduce: function reduce()reduceRight: function reduceRight()reverse: function reverse()shift: function shift()slice: function slice()some: function some()sort: function sort()splice: function splice()toLocaleString: function toLocaleString()toString: function toString()unshift: function unshift()Symbol(Symbol.iterator): function values()Symbol(Symbol.unscopables): Object__proto__: Object
+HTMLCollection.prototype.forEach
+undefined
+function sayHello(){
+console.log("Hello "+this.name);
+}
+undefined
+window.sayHello();
+VM780:2 Hello 
+undefined
+sayHello();
+VM780:2 Hello 
+undefined
+window.name = "Amit";
+"Amit"
+sayHello();
+VM780:2 Hello Amit
+undefined
+var object = {name:'Ram'};
+undefined
+function sayHello(){
+console.log("Hello "+this.name);
+}
+undefined
+sayHello.call(object);
+VM855:2 Hello Ram
+undefined
+sayHello.apply([object]);
+VM855:2 Hello undefined
+undefined
+sayHello.apply(object);
+VM855:2 Hello Ram
+undefined
+function sayHello(age,salary){
+console.log("Hello "+this.name+" Age "+age+" Salary "+salary);
+}
+undefined
+sayHello.call(object,21,9999);
+VM930:2 Hello Ram Age 21 Salary 9999
+undefined
+var tt = [21,9999];
+undefined
+sayHello.apply(object,tt);
+VM930:2 Hello Ram Age 21 Salary 9999
+undefined
+var gg = sayHello.bind(object);
+undefined
+gg();
+VM930:2 Hello Ram Age undefined Salary undefined
+undefined
+gg(21,7676);
+VM930:2 Hello Ram Age 21 Salary 7676
+undefined
+var e = document.getElementsByClassName("clearfields");
+undefined
+e;
+(2) [input#name.clearfields, input#salary.clearfields, name: input#name.clearfields, salary: input#salary.clearfields]
+Array.prototype.forEach.call(e,myfunction);
+VM381:2 W is [object HTMLInputElement]
+VM381:2 W is [object HTMLInputElement]
+undefined
+function myfunction(w){
+console.log("W is "+w);
+}
+undefined
+function myfunction(w){
+w.value="";
+//console.log("W is "+w);
+}
+undefined
+Array.prototype.forEach.call(e,myfunction);
+undefined
+Array.prototype.forEach.apply(e,[myfunction]);
+undefined
+Array.prototype.forEach.apply(e,[myfunction]);
+undefined
+var ff = Array.prototype.forEach.bind(e);
+undefined
+ff(myfunction);
+undefined
+Array.prototype.forEach.call(e,(w)=>w.value="");
+undefined
+Array.prototype.forEach.call(e,(w)=>w.value="");
+undefined

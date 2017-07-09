@@ -1,0 +1,46 @@
+controller.js:8 Emp Id is  1000
+var dd = [10,20,30,40,50];
+undefined
+dd.forEach(function(w){ console.log("W VAlue is  "+w);});
+VM1302:1 W VAlue is  10
+VM1302:1 W VAlue is  20
+VM1302:1 W VAlue is  30
+VM1302:1 W VAlue is  40
+VM1302:1 W VAlue is  50
+undefined
+function myloop(fn){
+for(var i = 1; i<=10;i++){
+fn(i);
+}
+}
+undefined
+function cube(w){ return w*w*w; }; 
+undefined
+myloop(cube);
+undefined
+function cube(w){ console.log( w*w*w); }; 
+undefined
+myloop(cube);
+VM1494:1 1
+VM1494:1 8
+VM1494:1 27
+VM1494:1 64
+VM1494:1 125
+VM1494:1 216
+VM1494:1 343
+VM1494:1 512
+VM1494:1 729
+VM1494:1 1000
+undefined
+myloop((w)=>console.log(w*w));
+VM1536:1 1
+VM1536:1 4
+VM1536:1 9
+VM1536:1 16
+VM1536:1 25
+VM1536:1 36
+VM1536:1 49
+VM1536:1 64
+VM1536:1 81
+VM1536:1 100
+undefined
