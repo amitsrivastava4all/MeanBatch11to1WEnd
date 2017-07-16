@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="angular.min.js"></script>
+</head>
+<body ng-app>
+	<input type="text" ng-model="txt">
+	<h1>Welcome  {{txt|uppercase}} </h1>
+	<input type="text" ng-init="price=0" ng-model="price">
+	<input ng-model="qt" ng-init="qt=0" type="text">
+	Total is {{price*qt}}
+	<h1 class="{{txt}}">Hello BootStrap</h1>
+	
+</body>
+</html>

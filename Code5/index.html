@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	function sayHello(){
+		var strValue = document.getElementById("txt").value;
+		document.getElementById("output").innerHTML = strValue;
+	}
+	</script>
+</head>
+<body>
+	<input type="text" id="txt" onkeyup="sayHello()">
+	<h1>Welcome <span id="output"></span></h1>
+</body>
+</html>
