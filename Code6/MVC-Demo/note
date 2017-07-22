@@ -1,0 +1,24 @@
+ng-app="greetapp"  —> from here we bootstrap the angular by using ng-app, and along with we are loading our module in this case it is greet app.
+
+Model - Contains the Logic or Server Communication Code
+To Build a Model in Angular JS 
+we need to use factory or service
+
+Factory contains logic and logic we write inside the functions
+and we wrap all the functions into a single object and we return 
+the object to the controller , so controller can call the factory methods by using the returned object.
+// Factory Always return an object
+module name.factory(“factory name”,function(){
+var object = {};
+return object;
+});
+
+Controller —> Controller is a Glue B/w View and Model.
+Controller Role
+1. Take Data from View 
+2. Give it to Factory (Model)
+3. Get the Processed Result from Model and give it to view
+
+$scope - It is a predefine service in angular js and it is used to communicate b/w view and controller
+Each Controller has there own $scope. So $scope is local for each controller.
+$scope is for JS Term is a object.
