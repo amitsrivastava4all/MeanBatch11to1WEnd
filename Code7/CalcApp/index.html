@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calc App</title>
+	<link rel="stylesheet" href="css/custom.css">
+	<script src="libs/angular.min.js"></script>
+	<script src="js/app2.js"></script>
+	<script src="js/app.js"></script>
+	
+	<script src="js/model.js"></script>
+	<script src="js/controller.js"></script>
+</head>
+<body ng-app="calcapp" ng-controller="calccontroller">
+	<table>
+		<tr>
+			<td><label for="">FirstNo</label></td>
+			<td><input type="text" ng-model="firstno" ></td>
+		</tr>
+		<tr>
+			<td><label for="">SecondNo</label></td>
+			<td><input type="text" ng-model="secondno"  ></td>
+		</tr>
+		<tr>
+			<td>
+				<button ng-class="{red:currentClick==1}" ng-click="doOperation('+')">+</button>
+				<button ng-class="{green:currentClick==2}" ng-click="doOperation('-')">-</button>
+				<button ng-class="{yellow:currentClick==3}" ng-click="doOperation('*')">*</button>
+				<button ng-class="{blue:currentClick==4}" ng-click="doOperation('/')">/</button>
+			</td>
+		</tr>
+	</table>
+	<h1 class="{{mystyle}}">Result is {{result}}</h1>
+</body>
+</html>
