@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/custom.css"/>
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-route.min.js"></script>
+    <script src="module/app.js"></script>
+    <script src="config/urlconfig.js"></script>
+    <script src="factory/offerfactory.js"></script>
+    <script src="controller/offercontroller.js"></script>
+    <script src="controller/homecontroller.js"></script>
+    <script src="controller/logincontroller.js"></script>
+    <script src="routes/spa-routes.js"></script>
+</head>
+<body ng-app="spaapp">
+<ul id="navmenu">
+    <li><a ng-href="#/">Home</a></li>
+    <li><a ng-href="#/login">Login</a></li>
+    <li><a ng-href="#/register">Register</a></li>
+    <li><a ng-href="#/offers/10/20">Offers</a></li>
+    <li><a ng-href="#/aboutus">AboutUs</a></li>
+    <li><a ng-href="#/news">News</a></li>
+</ul>
+<div id="main">
+<ng-view></ng-view>
+
+</div>
+</body>
+</html>

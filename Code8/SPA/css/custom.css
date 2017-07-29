@@ -1,0 +1,12 @@
+#navmenu>li{
+    display: inline;
+    padding: 10px;
+    border-width: 2px;
+    border-style: solid;
+}
+#main{
+    border-width: 2px;
+    border-style: solid;
+    border-color: gray;
+}
+
