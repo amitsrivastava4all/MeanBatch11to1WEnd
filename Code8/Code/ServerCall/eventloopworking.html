@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var counter = 1;
+		function sayHello(){
+			document.getElementById("msg").innerHTML="Hello "+counter;
+			counter++;
+		}
+		function doLargeProcessing(){
+			document.getElementById("output").innerHTML="Process Start";
+			for(var i = 1; i<=10000; i++){
+				for(var j = 1; j<=1000; j++){
+					for(var k = 1; k<=1000; k++){
+						
+					}
+				}
+			}
+			document.getElementById("output").innerHTML="Process End";
+		}
+	</script>
+</head>
+<body>
+<button onclick="doLargeProcessing()">Large</button>
+<span id="output"></span>
+<span id="msg"></span>
+	<button onclick="sayHello()">Say Hello</button>
+</body>
+</html>
