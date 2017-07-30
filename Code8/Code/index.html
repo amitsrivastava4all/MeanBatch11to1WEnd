@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="angular.min.js"></script>
+	<script>
+		
+	var app = angular.module("myapp",[]);
+	app.factory("myfactory",function(){
+		var object = {
+			x :100,
+			setX:function(x){
+				this.x = x;
+			},
+			getX:function(){
+				return this.x;
+			}
+		};
+		return object;
+		
+	})
+		app.controller("myctrl",function($scope,$rootScope,myfactory){
+		$rootScope.firstName = "Amit";
+			myfactory.setX(1000);
+			$scope.x = myfactory.getX();
+		//$scope.firstName = "Amit";
+	});
+	app.controller("myctrl2",function($scope,myfactory){
+		$scope.lastName = "Srivastava";
+		$scope.y = myfactory.getX();
+	});	
+	</script>
+</head>
+<body ng-app="myapp">
+	<div ng-controller="myctrl">
+		{{firstName}} and {{x}}
+		<!--<div ng-controller="myctrl2"> -->
+		<!--{{firstName}}--><!-- &nbsp;&nbsp; {{lastName}}
+	</div>-->
+	</div>
+	<hr>
+	<div ng-controller="myctrl2">
+		{{firstName}}&nbsp;&nbsp; {{lastName}} and {{y}}
+	</div>
+	
+	
+</body>
+</html>

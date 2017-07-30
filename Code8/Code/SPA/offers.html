@@ -1,0 +1,14 @@
+<h1>This is the Offer Page</h1>
+        <h2>{{offermsg}}</h2>
+
+        Offers are :
+        <!--{{offers}}-->
+        <ul>
+                <li ng-repeat="offer in offers">
+                        Name : {{offer.name}}
+                        Discount : {{offer.discount}}
+                        Remarks : {{offer.remarks}}
+                        Image : <img ng-src="{{offer.imageurl}}"/>
+                </li>
+                {{error}}
+        </ul>
