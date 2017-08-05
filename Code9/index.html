@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.min.js"></script>
+    <style>
+        input.ng-invalid{
+            background-color: red;
+        }
+        input.ng-valid{
+            background-color: green;
+        }
+    </style>
+    <script>
+        var app = angular.module("regapp",[]);
+        app.controller("regctrl",function($scope){
+			
+			$scope.checkBW=function(){
+				$scope.msg="Invalid Date...";
+			}
+            $scope.submitForm=function(regForm){
+                if(regForm.$valid){
+                    alert("Form Submit");
+                }
+                else{
+}
+                alert("Can't Submit the Form ");
+            }
+        });
+    </script>
+</head>
+<body ng-app="regapp">
+<!--
+States of a field
+1. $touched - field has been touched (blur focusout)
+2. $untouched - field not touched
+3. $pristine - no modification
+4. $dirty - modified
+5. $invalid - field is invalid
+6. $valid- field is valid
+-->
+<div ng-controller="regctrl">
+
+<form name="regForm"  ng-submit="submitForm('regForm')" novalidate="novalidate" >
+    CreditCard: <input type="text" name="creditcard" ng-model="card" pattern="[a-z]{3}[0-9]{2}"/>
+    
+	<input type="date" ng-change="checkBW()">
+   <span>{{msg}}</span>     
+    
+    <span  ng-show="regForm.creditcard.$touched && regForm.creditcard.$error.pattern && regForm.creditcard.$invalid">Invalid Card Pattern </span>
+    
+     <pre>
+    $pristine (Not Modified) {{regForm.creditcard.$pristine}}
+    $touched (It is Clicked) {{regForm.creditcard.$touched}}
+        $dirty (It is Modified) {{regForm.creditcard.$dirty}}
+        $invalid (Not Correct Validation) {{regForm.creditcard.$invalid}}
+        $valid (Correct Validation) {{regForm.creditcard.$valid}}
+        $error (What is the Error) {{regForm.creditcard.$error}}
+
+
+
+
+    </pre>
+    
+    Name: <input name="username" pattern="[A-Za-z]{3,10}" ng-model="uname" type="text" required/>
+    
+    
+    
+    <span  ng-show="regForm.username.$touched && regForm.username.$error.required">Name is Required </span>
+    <span  ng-show="regForm.username.$touched && regForm.username.$error.pattern">Name Require 3 Chars </span>
+    <pre>
+    $pristine (Not Modified) {{regForm.username.$pristine}}
+    $touched (It is Clicked) {{regForm.username.$touched}}
+        $dirty (It is Modified) {{regForm.username.$dirty}}
+        $invalid (Not Correct Validation) {{regForm.username.$invalid}}
+        $valid (Correct Validation) {{regForm.username.$valid}}
+        $error (What is the Error) {{regForm.username.$error}}
+
+
+
+
+    </pre>
+    <br>
+    Email : <input type="email" name="email" ng-model="emailId" required/>
+    <pre>
+    $pristine (Not Modified) {{regForm.email.$pristine}}
+    $touched (It is Clicked) {{regForm.email.$touched}}
+    $dirty (It is Modified) {{regForm.email.$dirty}}
+    $invalid (Not Correct Validation) {{regForm.email.$invalid}}
+    $valid (Correct Validation) {{regForm.email.$valid}}
+    $error (What is the Error) {{regForm.email.$error}}
+        </pre>
+    <br>
+    <button type="submit">Submit</button>
+
+</form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<html>
+<script src="angular.min.js"></script>
+<body ng-app>
+   <form name="f1" novalidate>
+    <input name="fname" ng-model="fname" type="text" placeholder="Type First Name" required>
+    {{f1.fname}}
+    <input type="text" required name="card" ng-model="card" placeholder="Type Credit Card No" pattern="[a-z]{3}[0-9]{2}" title="Invalid Card Format">
+    {{f1.card}}
+    <input type="email" placeholder="Type Email Here">
+    <input type="url">
+    <input type="submit">
+</form>
+</body>
+</html>
