@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<tcs-head-tag></tcs-head-tag>
+	<script src='jquery.min.js'></script>
+	<script src="angular.min.js"></script>
+	<script src="directive.js"></script>
+	
+</head>
+<body >
+	
+	<tcs-header-directive></tcs-header-directive>
+	<div ng-controller="myctrl">
+		<tcs-menu></tcs-menu>
+	</div>
+	
+	<p>This is the Main Content</p>
+	<sum firstno="10" secondno="20"></sum>
+	<iframe width="640" height="360" src="https://www.youtube.com/embed/TvIbeR80Jy4" frameborder="0" allowfullscreen></iframe>
+</body>
+</html>
