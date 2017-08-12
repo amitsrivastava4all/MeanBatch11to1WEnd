@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="angular.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="directivedemo.js"></script>
+</head>
+<body ng-app="myapp" >
+<display-date-directive></display-date-directive>
+<div ng-controller="timectrl">
+<button ng-click="doClock()">Start</button>
+<clock></clock>
+</div>
+<p attributelevel>this is another example</p>
+<h1 attributelevel>Hello Attribute Level</h1>
+
+<elementlevel></elementlevel>
+
+<input id="x1" type="text" calendar>
+
+<input type="text" id="x2" calendar>
+
+<!--
+<div class="classlevel">
+    </div>
+<h1 attributelevel>Hello </h1>
+-->
+<!--<elementlevel></elementlevel>-->
+<!--
+<div ng-controller="myctrl2">
+    <name-directive></name-directive>
+</div>
+-->
+
+<!--
+<my-first-directive></my-first-directive>
+<br>
+<my:first:directive></my:first:directive>
+<br>
+<my_first_directive></my_first_directive>
+-->
+<!--  <p attributelevel>Hello </p>-->
+   <!--<elementlevel></elementlevel>-->
+    <!--<name-directive></name-directive>-->
+<!--
+<my-first-directive></my-first-directive>
+<br>
+<my:first:directive></my:first:directive>
+<br>
+<my_first_directive></my_first_directive>
+-->
+<div class="classlevel">
+    </div>
+<!--<elementlevel/>-->
+<!--<p attributelevel>Hello </p>-->
+<!--<div ng-controller="myctrl2">
+ <name-directive></name-directive>
+<my-first-directive></my-first-directive>
+</div>-->
+<!--<my-first-directive></my-first-directive>
+<br>
+<my:first:directive></my:first:directive>
+<br>
+<my_first_directive></my_first_directive>-->
+<!--<div ng-controller="myctrl">
+    <name-directive></name-directive>
+</div>-->
+<!--<elementlevel></elementlevel>-->
+<!--<div attributelevel="amit">
+    Hello this is Attribute Level
+</div>
+<div class="classlevel">-->
+
+
+<!-- directive: commentlevel -->
+<!--<div ng-controller="myctrl">
+    <elementlevel></elementlevel>
+    &lt;!&ndash;<div attributelevel>
+        Hello this is Attribute Level
+    </div>&ndash;&gt;
+    &lt;!&ndash;<elementlevel></elementlevel>
+
+    <div class="classlevel">
+
+    </div>
+&ndash;&gt;
+</div>
+<name-directive></name-directive>-->
+</body>
+</html>

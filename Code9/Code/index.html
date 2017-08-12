@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<tcs-head-tag></tcs-head-tag>
+	<script src='jquery.min.js'></script>
+	<script src="angular.min.js"></script>
+	<script src="spa-routes.js"></script>
+	<script src="directive.js"></script>
+	<style>
+		#x{
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			border-style: solid;
+			border-color: red;
+			background-color: yellow;
+			border-width: 5px;
+		}
+	</style>
+</head>
+<body >
+
+<div id="x">
+	
+</div>
+
+<input type="text" calendar>
+	
+	<tcs-header-directive></tcs-header-directive>
+	<div ng-controller="myctrl">
+		<tcs-menu></tcs-menu>
+	</div>
+	<ng-view></ng-view>
+	<p>This is the Main Content</p>
+	<sum firstno="10" secondno="20"></sum>
+	<iframe width="640" height="360" src="https://www.youtube.com/embed/TvIbeR80Jy4" frameborder="0" allowfullscreen></iframe>
+</body>
+</html>

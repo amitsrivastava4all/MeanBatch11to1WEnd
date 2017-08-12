@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	function showLatLong(){
+		window.navigator.geolocation.getCurrentPosition(show,error);
+		
+	}
+		function show(pos){
+			alert(pos.coords.latitude + " " +pos.coords.longitude);;
+		}
+		function error(){
+			alert("Error ...");
+		}
+	</script>
+</head>
+<body>
+	<button onclick="showLatLong()">Get</button>
+</body>
+</html>
