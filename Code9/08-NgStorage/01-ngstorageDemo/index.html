@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+<!-- CDN Link -->
+    <!--https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js-->
+    <script src="angular.min.js"></script>
+    <script src="ngStorage.min.js"></script>
+    <script>
+        angular.module('app', ['ngStorage'])
+			.controller('Ctrl', function($scope, $localStorage,
+										  $sessionStorage){
+            $scope.abcd = $localStorage; //Pass $localStorage (or $sessionStorage) by reference to a hook under $scope
+        // Delete from Local Storage
+            //delete $scope.$storage.counter;
+           // delete $localStorage.counter;
+           // $localStorage.$reset(); // clear the localstorage
+           /* $localStorage.$reset({
+                counter: 42   // reset with default value
+            });*/
+        });
+    </script>
+</head>
+<body ng-app="app" ng-controller="Ctrl">
+<button ng-click="abcd.counter = abcd.counter + 1">
+{{abcd.counter}}</button>
+</body>
+</html>

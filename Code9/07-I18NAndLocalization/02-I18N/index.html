@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.min.js" ></script>
+    <script src="angular-translate.min.js" ></script>
+    <script>
+        var app = angular.module('myapp', ['pascalprecht.translate']);
+
+        app.config(function ($translateProvider) {
+            $translateProvider.translations('en', {
+                TITLE: 'Hello',
+                FOO: 'This is a paragraph.',
+                BUTTON_LANG_EN: 'english',
+                BUTTON_LANG_DE: 'german',
+                MSG:'Welcome User'
+            });
+            $translateProvider.translations('de', {
+                TITLE: 'Hallo',
+                FOO: 'Dies ist ein Paragraph.',
+                BUTTON_LANG_EN: 'englisch',
+                BUTTON_LANG_DE: 'deutsch',
+                MSG:'Welcome User2'
+            });
+            $translateProvider.preferredLanguage('en');
+        });
+
+        app.controller('Ctrl', function ($scope, $translate) {
+            $scope.changeLanguage = function (key) {
+                $translate.use(key);
+            };
+        });
+    </script>
+</head>
+<body ng-app="myapp" ng-controller="Ctrl">
+<h1 translate="TITLE"> </h1>
+<p translate="FOO"></p>
+<button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
+<button ng-click="changeLanguage('de')" translate="BUTTON_LANG_DE"></button>
+<p translate="MSG"></p>
+
+</body>
+</html>
