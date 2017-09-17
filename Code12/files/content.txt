@@ -1,0 +1,23 @@
+Data binding in AngularJS is the synchronization between the model and the view.
+
+Data Model
+AngularJS applications usually have a data model. The data model is a collection of data available for the application.
+
+Example
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.firstname = "John";
+    $scope.lastname = "Doe";
+});
+HTML View
+The HTML container where the AngularJS application is displayed, is called the view.
+
+The view has access to the model, and there are several ways of displaying model data in the view.
+
+You can use the ng-bind directive, which will bind the innerHTML of the element to the specified model property:
+
+
+Coming from W3 Schools!!!!!
+
+
+THIS IS NEW CONTENT.....
