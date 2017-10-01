@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.min.js"></script>
+    <script>
+        var app = angular.module("myapp",[]);
+        app.factory("myfactory",function($http,$q){
+            return {"caller":function(){
+                var defered = $q.defer();
+                $http.get("http://192.168.1.27:7777/mobiles/123456").success(function(data){
+                    console.log("Inside Success "+data);
+                    defered.resolve(data);
+
+                }) .error(function(er){
+                    console.log("Error is ",er);
+
+                    defered.reject(er);
+
+                });
+                return defered.promise;
+            }};
+        })
+        app.controller("myctrl",function($scope,myfactory){
+            var promise = myfactory.caller();
+            function pass(data){
+                $scope.data=data;
+            }
+            function fail(er){
+                $scope.error=er;
+            }
+            promise.then(pass,fail);
+        });
+
+    </script>
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+{{data}}
+<br>
+<ul>
+    <li ng-repeat="x in data">{{x.id}} &nbsp;&nbsp; {{x.name}}&nbsp;&nbsp;{{x.price}}</li>
+</ul>
+<br>
+{{error}}
+</body>
+</html>

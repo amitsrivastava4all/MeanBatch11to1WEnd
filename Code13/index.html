@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/angular.min.js">
+        
+</script>
+<script>
+    const app = angular.module("myapp",[]);
+    app.controller("myctrl",($scope,myfactory)=>{
+        var promise = myfactory.callServer();
+        promise.then(function(data){
+            $scope.result = data;
+        },function(err){
+            $scope.result = err;
+        })
+    });
+    app.factory("myfactory",($http,$q)=>{
+        return {
+            callServer:function(){
+                var defered = $q.defer();
+                $http.get('http://localhost:7777/mobiles').then(function(data){
+                    defered.resolve(data);
+                },function(err){
+                    defered.reject(err);    
+                });
+            return defered.promise;
+            }
+        }
+    })
+</script>
+</head>
+<body ng-app="myapp" ng-controller="myctrl">
+    <ul>
+        <li ng-repeat="mobile in result.data">
+            {{mobile.id}} {{mobile.name}} {{mobile.price}}
+        </li>
+    </ul>
+</body>
+</html>
