@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+	<script>
+	window.addEventListener ("load", function() {
+		
+     messages = [];
+    var socket = io.connect('http://192.168.1.19:9000');
+    var field = document.getElementById("field");
+    var sendButton = document.getElementById("send");
+    var content = document.getElementById("content");
+  // event register
+    socket.on('message', function (data) {
+        if(data.message) {
+			if(data.userid){
+				 messages.push(data.message+" :: "+data.userid);
+			}
+			else{
+				
+            messages.push(data.message);
+			}
+				var html = '';
+            for(var i=0; i<messages.length; i++) {
+                html += messages[i] + '<br />';
+            }
+            content.innerHTML = html;
+        } else {
+            console.log("There is a problem:", data);
+        }
+    });
+
+    sendButton.onclick = function() {
+        var text = field.value;
+		// Event fire
+        socket.emit('send', { message: text,userid:'Amit' });
+    };
+
+});
+	</script>
+</head>
+<body>
+	<input type="text" id="field" placeholder="Type Message to send...">
+	<button id="send">Send</button>
+	<div id="content"></div>
+</body>
+</html>

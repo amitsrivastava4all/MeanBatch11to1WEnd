@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+       
+               
+    <meta charset="UTF-8">
+    <title>Server Sent Events - client !12345 </title>  
+    <style>
+        .highlight  {
+             color : red;
+            font-weight: bold;
+            font-style: italic; 
+        }  
+    </style>
+    
+    
+
+    
+    <script>
+		
+        window.addEventListener("load", init);
+        var esConnection = null;
+        function init(){
+            var btnConnect = document.getElementById("btnConnect");
+            btnConnect.addEventListener("click", onBtnConnectClick);
+        }
+        function onBtnConnectClick(){
+            esConnection = new EventSource('./stream');
+			console.log("Connection is ",esConnection);
+           // esConnection.addEventListener('message', onMessageFromServer);
+            esConnection.addEventListener('fileChange', onFileChangeMessageFromServer);
+        } 
+        function onMessageFromServer(evtArg){
+            document.getElementById("divMessages").innerHTML += '<div> Message is' + evtArg.mymessage +'</div>';
+       	console.log("ON Message From Server Call ",evtArg);
+		}
+        function onFileChangeMessageFromServer(evtArg){
+            document.getElementById("divMessages").innerHTML += '<div class="highlight">' + evtArg.data +" "+evtArg.event+ '</div>';
+            //window.location.reload();
+        }  
+    </script>
+</head>
+<body>
+   <h1>Hello- this is the change1</h1>
+    <h1 style="color : blue">Server Sent Events Example !</h1>
+    <input type="button" value="Connect" id="btnConnect">
+    <div id="divMessages"></div>
+</body>
+</html>
