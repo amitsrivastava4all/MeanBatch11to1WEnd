@@ -14,7 +14,7 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "log4js": "^2.3.12",
-    "mongoose": "^4.13.5",
+    "mongoose": "^5.7.7",
     "morgan": "^1.9.0"
   },
   "devDependencies": {
